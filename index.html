@@ -8,26 +8,26 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B7%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@300;400;500;600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero-evento.jpg" fetchpriority="high">
 <style>
   :root{
-    --bg:#fbf8f3;
-    --bg-alt:#f2ece1;
+    --bg:#ffffff;
+    --bg-alt:#f3f3f3;
     --bg-card:#ffffff;
-    --ink:#2c2a24;
-    --ink-soft:#6b6558;
-    --line:#e6ddcd;
-    --sage:#6f8a6a;
-    --sage-dark:#516a4d;
-    --terracotta:#c1694f;
-    --terracotta-dark:#a3543d;
-    --cream:#fbf8f3;
-    --blush:#fbedf0;
-    --blush-2:#f5d9e1;
-    --fuchsia:#c1547f;
-    --fuchsia-dark:#9c3c64;
-    --shadow: 0 10px 30px -12px rgba(43,40,30,0.18);
+    --ink:#161616;
+    --ink-soft:#5a5a5a;
+    --line:#e2e2e2;
+    --sage:#1a1a1a;
+    --sage-dark:#000000;
+    --terracotta:#111111;
+    --terracotta-dark:#000000;
+    --cream:#ffffff;
+    --blush:#f0f0f0;
+    --blush-2:#dcdcdc;
+    --fuchsia:#000000;
+    --fuchsia-dark:#000000;
+    --shadow: 0 10px 30px -12px rgba(0,0,0,0.18);
     --radius: 18px;
     --maxw: 1180px;
     font-size: 16px;
@@ -39,7 +39,7 @@
     margin:0;
     background:var(--bg);
     color:var(--ink);
-    font-family:'Jost', sans-serif;
+    font-family:'Fraunces', serif;
     font-weight:400;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
@@ -57,7 +57,7 @@
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
   .eyebrow{
     display:inline-block;
-    font-family:'Jost',sans-serif;
+    font-family:'Fraunces',serif;
     font-size:0.78rem;
     letter-spacing:0.18em;
     text-transform:uppercase;
@@ -75,7 +75,7 @@
     gap:8px;
     padding:14px 28px;
     border-radius:999px;
-    font-family:'Jost',sans-serif;
+    font-family:'Fraunces',serif;
     font-size:0.95rem;
     font-weight:500;
     letter-spacing:0.01em;
@@ -85,7 +85,7 @@
     white-space:nowrap;
   }
   .btn:hover{ transform:translateY(-2px); }
-  .btn-primary{ background:var(--terracotta); color:#fff; box-shadow:0 8px 20px -8px rgba(193,105,79,0.55);}
+  .btn-primary{ background:var(--terracotta); color:#fff; box-shadow:0 8px 20px -8px rgba(0,0,0,0.5);}
   .btn-primary:hover{ background:var(--terracotta-dark); }
   .btn-ghost{ background:transparent; color:var(--cream); border-color:rgba(255,255,255,0.55); }
   .btn-ghost:hover{ background:rgba(255,255,255,0.12); }
@@ -96,7 +96,7 @@
   /* Header */
   header{
     position:sticky; top:0; z-index:100;
-    background:rgba(251,248,243,0.86);
+    background:rgba(255,255,255,0.86);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -108,12 +108,12 @@
   .logo{
     font-family:'Fraunces',serif;
     font-size:1.5rem;
-    font-style:italic;
     font-weight:500;
+    letter-spacing:-0.01em;
     display:flex; flex-direction:column; line-height:1.05;
   }
   .logo span{
-    font-family:'Jost',sans-serif;
+    font-family:'Fraunces',serif;
     font-style:normal;
     font-size:0.62rem;
     letter-spacing:0.22em;
@@ -133,24 +133,12 @@
   .nav-right{ display:flex; align-items:center; gap:18px; }
   .lang-switch{ display:flex; gap:6px; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px; background:#fff; }
   .lang-switch button{
-    border:none; background:transparent; cursor:pointer; font-size:1.15rem;
-    width:34px; height:30px; border-radius:999px; display:flex; align-items:center; justify-content:center;
-    filter:grayscale(70%); opacity:0.55; transition:all .18s ease;
+    border:none; background:transparent; cursor:pointer;
+    font-family:'Fraunces',serif; font-size:0.76rem; font-weight:600; letter-spacing:0.03em;
+    padding:0 11px; height:30px; border-radius:999px; display:flex; align-items:center; justify-content:center;
+    opacity:0.5; transition:all .18s ease;
   }
-  .lang-switch button.active{ background:var(--bg-alt); filter:none; opacity:1; }
-  .nav-credit{
-    width:24px; height:24px; border-radius:50%; flex-shrink:0;
-    border:1px solid rgba(193,84,127,0.35);
-    display:flex; align-items:center; justify-content:center; position:relative;
-    text-decoration:none; transition:opacity .2s ease, border-color .2s ease;
-  }
-  .nav-credit:hover{ opacity:0.7; border-color:rgba(193,84,127,0.75); }
-  .nav-credit .mono{
-    font-family:'UnifrakturMaguntia', cursive;
-    font-size:11px; line-height:1; color:var(--fuchsia-dark);
-    display:flex; position:relative; top:1px; user-select:none;
-  }
-  .nav-credit .mono span:last-child{ margin-left:-3px; }
+  .lang-switch button.active{ background:var(--bg-alt); opacity:1; }
   .hamburger{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
   .hamburger span{ display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; }
 
@@ -174,12 +162,12 @@
   .hero-media img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; }
   .hero-media::after{
     content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(30,28,22,0.25) 0%, rgba(24,22,17,0.35) 45%, rgba(20,18,14,0.86) 100%);
+    background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.88) 100%);
   }
   .hero-inner{ position:relative; z-index:2; padding-bottom:88px; max-width:640px; }
-  .hero-inner .eyebrow{ color:#e9dcc4; }
+  .hero-inner .eyebrow{ color:#e4e4e4; }
   .hero-inner h1{ font-size:clamp(2.6rem, 6vw, 4.4rem); color:#fff; margin-bottom:18px; }
-  .hero-inner p{ font-size:1.15rem; color:#efe9dd; margin-bottom:34px; max-width:520px; }
+  .hero-inner p{ font-size:1.15rem; color:#ececec; margin-bottom:34px; max-width:520px; }
   .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
 
   /* About */
@@ -205,7 +193,7 @@
     background:var(--blush); border-radius:0 12px 12px 0; font-style:italic;
     font-family:'Fraunces',serif; font-size:1.08rem; color:var(--ink);
   }
-  .quote cite{ display:block; margin-top:10px; font-style:normal; font-family:'Jost',sans-serif; font-size:0.82rem; color:var(--ink-soft); }
+  .quote cite{ display:block; margin-top:10px; font-style:normal; font-family:'Fraunces',serif; font-size:0.82rem; color:var(--ink-soft); }
 
   @media (max-width: 860px){
     .about-grid{ grid-template-columns:1fr; gap:56px; }
@@ -250,13 +238,13 @@
   .field label{ font-size:0.82rem; letter-spacing:0.03em; color:var(--ink-soft); }
   .field input, .field select, .field textarea{
     background:#fff; border:1px solid var(--blush-2);
-    border-radius:10px; padding:12px 14px; color:var(--ink); font-family:'Jost',sans-serif; font-size:0.95rem;
+    border-radius:10px; padding:12px 14px; color:var(--ink); font-family:'Fraunces',serif; font-size:0.95rem;
     transition:border-color .18s ease, box-shadow .18s ease;
   }
   .field input:focus, .field select:focus, .field textarea:focus{
-    outline:none; border-color:var(--fuchsia); box-shadow:0 0 0 3px rgba(193,84,127,0.15);
+    outline:none; border-color:var(--fuchsia); box-shadow:0 0 0 3px rgba(0,0,0,0.12);
   }
-  .field input::placeholder, .field textarea::placeholder{ color:#b7ab9e; }
+  .field input::placeholder, .field textarea::placeholder{ color:#a8a8a8; }
   .field select option{ color:#111; }
   .field textarea{ resize:vertical; min-height:96px; }
   .book-form .btn{ margin-top:6px; }
@@ -268,7 +256,7 @@
   .booking-info .row{ display:flex; gap:12px; margin-bottom:16px; font-size:0.94rem; color:var(--ink-soft); align-items:flex-start; }
   .booking-info .row .ic{ color:var(--fuchsia-dark); font-size:1.1rem; line-height:1.4; }
   .booking-info hr{ border:none; border-top:1px solid var(--blush-2); margin:20px 0; }
-  .form-note{ font-size:0.82rem; color:#a89a90; margin-top:10px; }
+  .form-note{ font-size:0.82rem; color:#8a8a8a; margin-top:10px; }
   #formStatus{ font-size:0.88rem; margin-top:6px; color:var(--sage-dark); min-height:1.2em; }
 
   @media (max-width: 900px){
@@ -293,63 +281,48 @@
   @media (max-width:860px){ .flower-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:520px){ .flower-grid{ grid-template-columns:1fr; } .flower-media{width:150px;height:150px;} }
 
-  /* Gallery */
-  .gallery{ background:var(--bg-alt); }
-  .gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-  .gallery-grid img{
-    width:100%; height:340px; object-fit:cover; border-radius:14px; box-shadow:var(--shadow);
-  }
-  @media (max-width:860px){ .gallery-grid{ grid-template-columns:1fr; } .gallery-grid img{ height:280px; } }
-
   /* Contact / footer */
-  footer{ background:#20241d; color:#e9e4d8; padding-top:80px; }
+  footer{ background:#141414; color:#f0f0f0; padding-top:80px; }
   .contact-grid{
     display:grid; grid-template-columns:1fr 1fr 1fr; gap:44px; padding-bottom:56px;
     border-bottom:1px solid rgba(255,255,255,0.1);
   }
   footer h3{ color:#fff; font-size:1.2rem; margin-bottom:18px; }
-  footer .col p, footer .col a{ color:#c8c2b3; font-size:0.94rem; display:block; margin-bottom:10px; }
+  footer .col p, footer .col a{ color:#b8b8b8; font-size:0.94rem; display:block; margin-bottom:10px; }
   .map-embed{ border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.12); }
-  .map-embed iframe{ width:100%; height:220px; border:0; filter:grayscale(20%) contrast(1.05); }
+  .map-embed iframe{ width:100%; height:220px; border:0; filter:grayscale(100%) contrast(1.08); }
   .hours-table{ width:100%; font-size:0.9rem; }
-  .hours-table tr td{ padding:5px 0; color:#c8c2b3; }
-  .hours-table tr td:last-child{ text-align:right; color:#e9e4d8; }
+  .hours-table tr td{ padding:5px 0; color:#b8b8b8; }
+  .hours-table tr td:last-child{ text-align:right; color:#ededed; }
   .bottom-bar{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-    padding:26px 0; font-size:0.82rem; color:#9b9584;
+    padding:26px 0; font-size:0.82rem; color:#8a8a8a;
   }
   @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
 
   /* Designer credit seal */
   .credit-line{
     display:flex; align-items:center; justify-content:center; gap:12px;
-    padding:22px 0 30px; border-top:1px solid rgba(233,228,216,0.08);
+    padding:22px 0 30px; border-top:1px solid rgba(255,255,255,0.08);
     text-decoration:none; cursor:pointer; transition:opacity .2s ease;
   }
   .credit-line:hover{ opacity:0.75; }
-  .credit-line:hover .credit-seal{ border-color:rgba(201,168,118,0.75); }
+  .credit-line:hover .credit-seal{ border-color:rgba(255,255,255,0.75); }
   .credit-line .credit-text{
-    font-size:0.66rem; letter-spacing:0.04em; color:#867f6e; font-style:italic;
+    font-size:0.66rem; letter-spacing:0.04em; color:#8a8a8a; font-style:italic;
   }
-  .credit-line--light{
-    margin-top:14px; padding:0; border-top:none;
-  }
-  .credit-line--light .credit-text{ color:var(--ink-soft); }
-  .credit-line--light .credit-seal{ border-color:rgba(193,84,127,0.35); }
-  .credit-line--light .credit-seal .mono{ color:var(--fuchsia-dark); }
-  .credit-line--light:hover .credit-seal{ border-color:rgba(193,84,127,0.7); }
   .credit-seal{
     width:34px; height:34px; border-radius:50%; flex-shrink:0;
-    border:1px solid rgba(201,168,118,0.45);
+    border:1px solid rgba(255,255,255,0.4);
     display:flex; align-items:center; justify-content:center; position:relative;
   }
   .credit-seal::before{
     content:""; position:absolute; inset:4px; border-radius:50%;
-    border:1px solid rgba(201,168,118,0.22);
+    border:1px solid rgba(255,255,255,0.2);
   }
   .credit-seal .mono{
     font-family:'UnifrakturMaguntia', cursive;
-    font-size:15px; line-height:1; color:#c9a876;
+    font-size:15px; line-height:1; color:#eee;
     display:flex; position:relative; top:1px; user-select:none;
   }
   .credit-seal .mono span:last-child{ margin-left:-4px; }
@@ -376,12 +349,9 @@
     </nav>
     <div class="nav-right">
       <div class="lang-switch" role="group" aria-label="Language selector">
-        <button type="button" id="lang-it" class="active" aria-label="Italiano" title="Italiano">🇮🇹</button>
-        <button type="button" id="lang-en" aria-label="English" title="English">🇬🇧</button>
+        <button type="button" id="lang-it" class="active" aria-label="Italiano" title="Italiano">IT</button>
+        <button type="button" id="lang-en" aria-label="English" title="English">ENG</button>
       </div>
-      <a class="nav-credit" href="mailto:fiorel2709@gmail.com?subject=RICHIESTA%20INFORMAZIONI%20PER%20SITO" title="Website designed by Leonardo Fiore" aria-label="Website designed by Leonardo Fiore">
-        <span class="mono"><span>L</span><span>F</span></span>
-      </a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -411,7 +381,7 @@
   <section class="about" id="chi-siamo">
     <div class="wrap about-grid">
       <div class="about-media reveal">
-        <img loading="lazy" decoding="async" src="assets/img/owner.jpg" alt="Marco Marcheselli, il titolare de Le Luire Fiori, sorridente nel suo negozio">
+        <img loading="lazy" decoding="async" src="assets/img/shop-venue.jpg" alt="Vetrina e interno del negozio Le Luire Fiori a Milano">
         <div class="badge">
           <div class="num">4,6★</div>
           <div class="lbl" data-i18n="about.badge">su Google (53 recensioni)</div>
@@ -419,11 +389,11 @@
       </div>
       <div class="reveal">
         <span class="eyebrow" data-i18n="about.eyebrow">CHI SIAMO</span>
-        <h2 data-i18n="about.h2">Marco, il nostro fiorista</h2>
-        <p data-i18n="about.p1">Dietro al bancone de Le Luire trovate Marco: un fiorista esperto, affabile e sempre disponibile. Sceglie personalmente ogni fiore al mercato, per garantire composizioni sempre fresche e di grande qualità.</p>
-        <p data-i18n="about.p2">Gentile nei modi e attento a ogni dettaglio, Marco è a vostra disposizione per consulenze personalizzate e per progettare insieme a voi eventi speciali come matrimoni, feste e cerimonie, curando ogni composizione floreale su misura.</p>
+        <h2 data-i18n="about.h2">Le Luire Fiori, il nostro spazio a Milano</h2>
+        <p data-i18n="about.p1">In Via Piero della Francesca, nel cuore di Milano, trovate il nostro negozio: uno spazio luminoso e curato, pensato per accogliervi tra composizioni fresche e profumate, rinnovate ogni giorno con i fiori scelti personalmente al mercato all'alba.</p>
+        <p data-i18n="about.p2">Un punto di riferimento per chi cerca fiori di qualità e consulenza esperta: dal semplice pensiero quotidiano alle grandi occasioni, il nostro team è a disposizione per creare insieme a voi composizioni su misura, per matrimoni, eventi e cerimonie.</p>
         <div class="quote">
-          <span data-i18n="about.quote">"Bravissimo il titolare e fiori stupendi!"</span>
+          <span data-i18n="about.quote">"Negozio delizioso, fiori sempre freschissimi e di grande qualità!"</span>
           <cite data-i18n="about.quoteAuthor">— Recensione verificata su Google</cite>
         </div>
       </div>
@@ -448,9 +418,9 @@
           </div>
         </div>
         <div class="service-card reveal">
-          <div class="service-media"><img loading="lazy" decoding="async" src="assets/img/servizio-bouquet.jpg" alt="Bouquet di fiori misti pronto per la consegna"></div>
+          <div class="service-media"><img loading="lazy" decoding="async" src="assets/img/servizio-bouquet.jpg" alt="Bouquet stagionale pronto per la consegna"></div>
           <div class="service-body">
-            <h3 data-i18n="services.s2.title">Bouquet di fiori</h3>
+            <h3 data-i18n="services.s2.title">Bouquet stagionale</h3>
             <p data-i18n="services.s2.desc">Bouquet freschi per ogni occasione: un pensiero, un compleanno, un semplice "ti penso". Scegliamo insieme i fiori più adatti.</p>
             <button class="btn btn-outline book-trigger" data-service="bouquet" data-i18n="services.cta">Richiedi preventivo</button>
           </div>
@@ -479,56 +449,56 @@
   <section class="flowers" id="fiori">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="flowers.eyebrow">I NOSTRI FIORI</span>
-        <h2 data-i18n="flowers.h2">I fiori più amati dai nostri clienti</h2>
-        <p data-i18n="flowers.sub">Una selezione dei fiori che compongono più spesso i nostri bouquet.</p>
+        <span class="eyebrow" data-i18n="flowers.eyebrow">COMPOSIZIONI</span>
+        <h2 data-i18n="flowers.h2">I nostri bouquet</h2>
+        <p data-i18n="flowers.sub">Nove stili floreali per ogni gusto e occasione, dai colori caldi alle rose classiche.</p>
       </div>
       <div class="flower-grid">
         <div class="flower-card reveal">
-          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-rosa.jpg" alt="Bouquet di rose rosse"></div>
-          <h3 data-i18n="flowers.f1.name">Rosa</h3>
-          <p data-i18n="flowers.f1.desc">Simbolo di eleganza senza tempo. La usiamo nei bouquet più classici e nelle composizioni per matrimoni: intensa, profumata, sempre la più richiesta.</p>
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-warm.jpg" alt="Fiore singolo dai colori caldi, arancio e giallo"></div>
+          <h3 data-i18n="flowers.f1.name">Colori caldi</h3>
+          <p data-i18n="flowers.f1.desc">Un'esplosione di tonalità arancio, giallo e corallo: un bouquet che scalda l'ambiente e mette subito di buonumore.</p>
         </div>
         <div class="flower-card reveal">
-          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-girasole.jpg" alt="Girasoli con eucalipto"></div>
-          <h3 data-i18n="flowers.f2.name">Girasole</h3>
-          <p data-i18n="flowers.f2.desc">Allegro e solare, porta luce in ogni stanza. Perfetto per chi ama i colori decisi e i pensieri che mettono subito il buonumore.</p>
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-cool.jpg" alt="Fiore singolo dai colori freddi, blu e viola"></div>
+          <h3 data-i18n="flowers.f2.name">Colori freddi</h3>
+          <p data-i18n="flowers.f2.desc">Blu, lilla e violetto si intrecciano in un'armonia delicata, perfetta per chi ama le composizioni eleganti e rilassanti.</p>
         </div>
         <div class="flower-card reveal">
-          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-ranuncolo.jpg" alt="Bouquet di ranuncoli rossi e arancioni"></div>
-          <h3 data-i18n="flowers.f3.name">Ranuncolo</h3>
-          <p data-i18n="flowers.f3.desc">Petali delicati e vellutati, disposti a strati come piccole rose. Un fiore di stagione che amiamo per la sua eleganza naturale.</p>
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-white.jpg" alt="Fiore singolo bianco"></div>
+          <h3 data-i18n="flowers.f3.name">Bianco</h3>
+          <p data-i18n="flowers.f3.desc">Purezza ed eleganza senza tempo: un bouquet tutto bianco, ideale per matrimoni, battesimi e momenti importanti.</p>
         </div>
         <div class="flower-card reveal">
-          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-ortensia.jpg" alt="Ortensie bianche in vaso"></div>
-          <h3 data-i18n="flowers.f4.name">Ortensia</h3>
-          <p data-i18n="flowers.f4.desc">Grandi corolle piene e morbide: da sole o abbinate ad altri fiori, danno volume e freschezza a qualsiasi composizione.</p>
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-pink.jpg" alt="Fiore singolo rosa"></div>
+          <h3 data-i18n="flowers.f4.name">Rosa</h3>
+          <p data-i18n="flowers.f4.desc">Delicato e romantico, il bouquet rosa è un classico intramontabile per ogni dedica gentile.</p>
         </div>
         <div class="flower-card reveal">
-          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-garofano.jpg" alt="Garofano verde in un bouquet"></div>
-          <h3 data-i18n="flowers.f5.name">Garofano verde</h3>
-          <p data-i18n="flowers.f5.desc">Un fiore originale e sorprendente, perfetto per chi cerca qualcosa fuori dagli schemi: dona un tocco fresco e moderno.</p>
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-whitegreen.jpg" alt="Fiore singolo bianco e verde"></div>
+          <h3 data-i18n="flowers.f5.name">Bianco-verde</h3>
+          <p data-i18n="flowers.f5.desc">Freschezza e naturalezza in un mix di petali bianchi e sfumature verdi, per chi cerca un tocco sobrio e raffinato.</p>
         </div>
         <div class="flower-card reveal">
-          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-gerbera.jpg" alt="Gerbere arancioni e rosa"></div>
-          <h3 data-i18n="flowers.f6.name">Gerbera</h3>
-          <p data-i18n="flowers.f6.desc">Colori vivaci e forma grafica: la gerbera è il fiore giusto per aggiungere allegria e movimento a ogni composizione.</p>
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-white-rose.jpg" alt="Singola rosa bianca"></div>
+          <h3 data-i18n="flowers.f6.name">Rose bianche</h3>
+          <p data-i18n="flowers.f6.desc">Rose bianche selezionate una a una: eleganza pura per le occasioni più raffinate.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="gallery" id="lavori">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="gallery.eyebrow">I NOSTRI LAVORI</span>
-        <h2 data-i18n="gallery.h2">Un assaggio delle nostre composizioni</h2>
-      </div>
-      <div class="gallery-grid">
-        <img class="reveal" loading="lazy" decoding="async" src="assets/img/interno-bouquet.jpg" alt="Bouquet con garofano verde, rose e lavanda">
-        <img class="reveal" loading="lazy" decoding="async" src="assets/img/bouquet-2.jpg" alt="Bouquet di rose rosse e alstroemeria">
-        <img class="reveal" loading="lazy" decoding="async" src="assets/img/bouquet-3.jpg" alt="Bouquet di rose rosse e arancioni">
+        <div class="flower-card reveal">
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-red.jpg" alt="Fiore singolo rosso"></div>
+          <h3 data-i18n="flowers.f7.name">Rosso</h3>
+          <p data-i18n="flowers.f7.desc">Passione e intensità in un bouquet dai toni rosso vivo, perfetto per stupire chi amate.</p>
+        </div>
+        <div class="flower-card reveal">
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-red-rose.jpg" alt="Singola rosa rossa"></div>
+          <h3 data-i18n="flowers.f8.name">Rose rosse</h3>
+          <p data-i18n="flowers.f8.desc">Il grande classico dell'amore: rose rosse fresche, scelte ogni giorno al mercato per la massima qualità.</p>
+        </div>
+        <div class="flower-card reveal">
+          <div class="flower-media"><img loading="lazy" decoding="async" src="assets/img/flower-signature.jpg" alt="Fiore singolo, selezione del fiorista"></div>
+          <h3 data-i18n="flowers.f9.name">Bouquet di Marco</h3>
+          <p data-i18n="flowers.f9.desc">La selezione firmata dal nostro fiorista: la composizione del giorno, pensata per chi si affida al nostro gusto.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -560,10 +530,14 @@
             <input id="f-date" name="date" type="date" min="">
           </div>
           <div class="field full">
+            <label for="f-address" data-i18n="booking.address">Indirizzo di consegna</label>
+            <input id="f-address" name="address" type="text" data-i18n-placeholder="booking.addressPh" placeholder="Via, numero civico, città">
+          </div>
+          <div class="field full">
             <label for="f-service" data-i18n="booking.service">Servizio</label>
             <select id="f-service" name="service">
               <option value="laurea" data-i18n="services.s1.title">Corona d'alloro per laurea</option>
-              <option value="bouquet" data-i18n="services.s2.title">Bouquet di fiori</option>
+              <option value="bouquet" data-i18n="services.s2.title">Bouquet stagionale</option>
               <option value="consulenza" data-i18n="services.s3.title">Consulenza per eventi</option>
               <option value="fornitura" data-i18n="services.s4.title">Fornitura fiori per eventi</option>
               <option value="altro" data-i18n="booking.other">Altro</option>
@@ -575,12 +549,6 @@
           </div>
           <div class="field full">
             <button type="submit" class="btn btn-primary btn-block" data-i18n="booking.submit">Invia richiesta</button>
-            <a class="credit-line credit-line--light" href="mailto:fiorel2709@gmail.com?subject=RICHIESTA%20INFORMAZIONI%20PER%20SITO">
-              <span class="credit-text">Website designed by Leonardo Fiore</span>
-              <span class="credit-seal" aria-hidden="true">
-                <span class="mono"><span>L</span><span>F</span></span>
-              </span>
-            </a>
             <p id="formStatus"></p>
             <p class="form-note" data-i18n="booking.note">Il modulo aprirà la vostra app di posta con la richiesta già compilata, pronta da inviare.</p>
           </div>
@@ -634,6 +602,12 @@
       <span data-i18n="footer.copy">© 2026 Le Luire Fiori Milano. Tutti i diritti riservati.</span>
       <span data-i18n="footer.tag">Fiori freschi, fatti con cura, ogni giorno.</span>
     </div>
+    <a class="credit-line" href="mailto:fiorel2709@gmail.com?subject=RICHIESTA%20INFORMAZIONI%20PER%20SITO" title="Website designed by Leonardo Fiore" aria-label="Website designed by Leonardo Fiore">
+      <span class="credit-text">Website designed by Leonardo Fiore</span>
+      <span class="credit-seal" aria-hidden="true">
+        <span class="mono"><span>L</span><span>F</span></span>
+      </span>
+    </a>
   </div>
 </footer>
 
@@ -645,18 +619,18 @@ const translations = {
     "hero.eyebrow":"FIORAIO A MILANO","hero.h1":"Le Luire Fiori",
     "hero.sub":"Composizioni fresche, fatte a mano, per ogni giorno e per i momenti che contano davvero.",
     "hero.btn1":"Prenota un servizio","hero.btn2":"Scopri la nostra storia",
-    "about.eyebrow":"CHI SIAMO","about.h2":"Marco, il nostro fiorista",
+    "about.eyebrow":"CHI SIAMO","about.h2":"Le Luire Fiori, il nostro spazio a Milano",
     "about.badge":"su Google (53 recensioni)",
-    "about.p1":"Dietro al bancone de Le Luire trovate Marco: un fiorista esperto, affabile e sempre disponibile. Sceglie personalmente ogni fiore al mercato, per garantire composizioni sempre fresche e di grande qualità.",
-    "about.p2":"Gentile nei modi e attento a ogni dettaglio, Marco è a vostra disposizione per consulenze personalizzate e per progettare insieme a voi eventi speciali come matrimoni, feste e cerimonie, curando ogni composizione floreale su misura.",
-    "about.quote":"“Bravissimo il titolare e fiori stupendi!”",
+    "about.p1":"In Via Piero della Francesca, nel cuore di Milano, trovate il nostro negozio: uno spazio luminoso e curato, pensato per accogliervi tra composizioni fresche e profumate, rinnovate ogni giorno con i fiori scelti personalmente al mercato all'alba.",
+    "about.p2":"Un punto di riferimento per chi cerca fiori di qualità e consulenza esperta: dal semplice pensiero quotidiano alle grandi occasioni, il nostro team è a disposizione per creare insieme a voi composizioni su misura, per matrimoni, eventi e cerimonie.",
+    "about.quote":"“Negozio delizioso, fiori sempre freschissimi e di grande qualità!”",
     "about.quoteAuthor":"— Recensione verificata su Google",
     "services.eyebrow":"SERVIZI","services.h2":"Prenota il tuo servizio",
     "services.sub":"Dalla laurea al matrimonio, da un pensiero di ogni giorno al grande evento: raccontateci cosa vi serve, penseremo noi al resto.",
     "services.cta":"Richiedi preventivo",
     "services.s1.title":"Corona d'alloro per laurea",
     "services.s1.desc":"La tradizionale corona d'alloro e il bouquet di rose per il giorno più importante, realizzati su misura.",
-    "services.s2.title":"Bouquet di fiori",
+    "services.s2.title":"Bouquet stagionale",
     "services.s2.desc":"Bouquet freschi per ogni occasione: un pensiero, un compleanno, un semplice \"ti penso\". Scegliamo insieme i fiori più adatti.",
     "services.s3.title":"Consulenza per eventi",
     "services.s3.desc":"Un incontro con Marco per progettare insieme l'allestimento floreale del vostro evento, dal concept ai colori.",
@@ -667,7 +641,9 @@ const translations = {
     "booking.name":"Nome e cognome","booking.namePh":"Il tuo nome",
     "booking.phone":"Telefono","booking.phonePh":"Il tuo numero",
     "booking.email":"Email","booking.emailPh":"La tua email",
-    "booking.date":"Data desiderata","booking.service":"Servizio","booking.other":"Altro",
+    "booking.date":"Data desiderata",
+    "booking.address":"Indirizzo di consegna","booking.addressPh":"Via, numero civico, città",
+    "booking.service":"Servizio","booking.other":"Altro",
     "booking.msg":"Messaggio","booking.msgPh":"Raccontateci qualcosa in più sulla vostra richiesta...",
     "booking.submit":"Invia richiesta",
     "booking.note":"Il modulo aprirà la vostra app di posta con la richiesta già compilata, pronta da inviare.",
@@ -675,15 +651,17 @@ const translations = {
     "booking.infoAddress":"V. Piero della Francesca, 40, 20154 Milano MI",
     "booking.infoHours":"Ven–Sab 8:30–19:30 · Lun 15:30–19:30 · Mar–Gio 8:30–19:30 · Dom chiuso",
     "booking.infoNote":"Marco è sempre disponibile per una chiacchierata e per aiutarvi a trovare la soluzione giusta, anche last minute.",
-    "flowers.eyebrow":"I NOSTRI FIORI","flowers.h2":"I fiori più amati dai nostri clienti",
-    "flowers.sub":"Una selezione dei fiori che compongono più spesso i nostri bouquet.",
-    "flowers.f1.name":"Rosa","flowers.f1.desc":"Simbolo di eleganza senza tempo. La usiamo nei bouquet più classici e nelle composizioni per matrimoni: intensa, profumata, sempre la più richiesta.",
-    "flowers.f2.name":"Girasole","flowers.f2.desc":"Allegro e solare, porta luce in ogni stanza. Perfetto per chi ama i colori decisi e i pensieri che mettono subito il buonumore.",
-    "flowers.f3.name":"Ranuncolo","flowers.f3.desc":"Petali delicati e vellutati, disposti a strati come piccole rose. Un fiore di stagione che amiamo per la sua eleganza naturale.",
-    "flowers.f4.name":"Ortensia","flowers.f4.desc":"Grandi corolle piene e morbide: da sole o abbinate ad altri fiori, danno volume e freschezza a qualsiasi composizione.",
-    "flowers.f5.name":"Garofano verde","flowers.f5.desc":"Un fiore originale e sorprendente, perfetto per chi cerca qualcosa fuori dagli schemi: dona un tocco fresco e moderno.",
-    "flowers.f6.name":"Gerbera","flowers.f6.desc":"Colori vivaci e forma grafica: la gerbera è il fiore giusto per aggiungere allegria e movimento a ogni composizione.",
-    "gallery.eyebrow":"I NOSTRI LAVORI","gallery.h2":"Un assaggio delle nostre composizioni",
+    "flowers.eyebrow":"COMPOSIZIONI","flowers.h2":"I nostri bouquet",
+    "flowers.sub":"Nove stili floreali per ogni gusto e occasione, dai colori caldi alle rose classiche.",
+    "flowers.f1.name":"Colori caldi","flowers.f1.desc":"Un'esplosione di tonalità arancio, giallo e corallo: un bouquet che scalda l'ambiente e mette subito di buonumore.",
+    "flowers.f2.name":"Colori freddi","flowers.f2.desc":"Blu, lilla e violetto si intrecciano in un'armonia delicata, perfetta per chi ama le composizioni eleganti e rilassanti.",
+    "flowers.f3.name":"Bianco","flowers.f3.desc":"Purezza ed eleganza senza tempo: un bouquet tutto bianco, ideale per matrimoni, battesimi e momenti importanti.",
+    "flowers.f4.name":"Rosa","flowers.f4.desc":"Delicato e romantico, il bouquet rosa è un classico intramontabile per ogni dedica gentile.",
+    "flowers.f5.name":"Bianco-verde","flowers.f5.desc":"Freschezza e naturalezza in un mix di petali bianchi e sfumature verdi, per chi cerca un tocco sobrio e raffinato.",
+    "flowers.f6.name":"Rose bianche","flowers.f6.desc":"Rose bianche selezionate una a una: eleganza pura per le occasioni più raffinate.",
+    "flowers.f7.name":"Rosso","flowers.f7.desc":"Passione e intensità in un bouquet dai toni rosso vivo, perfetto per stupire chi amate.",
+    "flowers.f8.name":"Rose rosse","flowers.f8.desc":"Il grande classico dell'amore: rose rosse fresche, scelte ogni giorno al mercato per la massima qualità.",
+    "flowers.f9.name":"Bouquet di Marco","flowers.f9.desc":"La selezione firmata dal nostro fiorista: la composizione del giorno, pensata per chi si affida al nostro gusto.",
     "footer.visit":"Vieni a trovarci","footer.bookLink":"Prenota un servizio →",
     "footer.hoursTitle":"Orari di apertura","footer.mapTitle":"Dove siamo",
     "footer.copy":"© 2026 Le Luire Fiori Milano. Tutti i diritti riservati.",
@@ -697,18 +675,18 @@ const translations = {
     "hero.eyebrow":"FLORIST IN MILAN","hero.h1":"Le Luire Fiori",
     "hero.sub":"Fresh, handmade arrangements for everyday moments and for the ones that truly matter.",
     "hero.btn1":"Book a service","hero.btn2":"Discover our story",
-    "about.eyebrow":"ABOUT US","about.h2":"Marco, our florist",
+    "about.eyebrow":"ABOUT US","about.h2":"Le Luire Fiori, our space in Milan",
     "about.badge":"on Google (53 reviews)",
-    "about.p1":"Behind the counter at Le Luire you'll find Marco: an expert florist, warm and always available. He personally selects every flower at the market, to guarantee arrangements that are always fresh and of great quality.",
-    "about.p2":"Courteous and attentive to every detail, Marco is available for personal consultations and for designing special events together with you — weddings, parties and ceremonies — with every floral arrangement made to measure.",
-    "about.quote":"“The owner is wonderful and the flowers are gorgeous!”",
+    "about.p1":"On Via Piero della Francesca, in the heart of Milan, you'll find our shop: a bright, carefully curated space, designed to welcome you among fresh, fragrant arrangements, renewed every day with flowers we personally select at the market at dawn.",
+    "about.p2":"A reference point for anyone looking for quality flowers and expert advice: from an everyday thoughtful gift to the biggest occasions, our team is on hand to create tailor-made arrangements with you, for weddings, events and ceremonies.",
+    "about.quote":"“A lovely shop, always fresh flowers of great quality!”",
     "about.quoteAuthor":"— Verified Google review",
     "services.eyebrow":"SERVICES","services.h2":"Book your service",
     "services.sub":"From graduations to weddings, from an everyday gift to a big event: tell us what you need, we'll take care of the rest.",
     "services.cta":"Request a quote",
     "services.s1.title":"Graduation laurel wreath",
     "services.s1.desc":"The traditional laurel wreath and rose bouquet for the most important day, made to measure.",
-    "services.s2.title":"Flower bouquets",
+    "services.s2.title":"Seasonal bouquet",
     "services.s2.desc":"Fresh bouquets for every occasion: a thoughtful gift, a birthday, or a simple \"thinking of you\". We'll help you choose the right flowers.",
     "services.s3.title":"Event consultations",
     "services.s3.desc":"A meeting with Marco to design your event's floral styling together, from concept to colour palette.",
@@ -719,7 +697,9 @@ const translations = {
     "booking.name":"Full name","booking.namePh":"Your name",
     "booking.phone":"Phone","booking.phonePh":"Your phone number",
     "booking.email":"Email","booking.emailPh":"Your email",
-    "booking.date":"Preferred date","booking.service":"Service","booking.other":"Other",
+    "booking.date":"Preferred date",
+    "booking.address":"Delivery address","booking.addressPh":"Street, number, city",
+    "booking.service":"Service","booking.other":"Other",
     "booking.msg":"Message","booking.msgPh":"Tell us a bit more about your request...",
     "booking.submit":"Send request",
     "booking.note":"The form will open your email app with the request already filled in, ready to send.",
@@ -727,15 +707,17 @@ const translations = {
     "booking.infoAddress":"V. Piero della Francesca, 40, 20154 Milan, Italy",
     "booking.infoHours":"Fri–Sat 8:30am–7:30pm · Mon 3:30pm–7:30pm · Tue–Thu 8:30am–7:30pm · Sun closed",
     "booking.infoNote":"Marco is always available for a chat and to help you find the right solution, even last minute.",
-    "flowers.eyebrow":"OUR FLOWERS","flowers.h2":"Our customers' favourite flowers",
-    "flowers.sub":"A selection of the flowers we use most often in our bouquets.",
-    "flowers.f1.name":"Rose","flowers.f1.desc":"A symbol of timeless elegance. We use it in our most classic bouquets and wedding arrangements: bold, fragrant, always the most requested.",
-    "flowers.f2.name":"Sunflower","flowers.f2.desc":"Cheerful and sunny, it brings light into any room. Perfect for anyone who loves bold colours and gifts that lift the mood instantly.",
-    "flowers.f3.name":"Ranunculus","flowers.f3.desc":"Delicate, velvety petals layered like tiny roses. A seasonal flower we love for its natural elegance.",
-    "flowers.f4.name":"Hydrangea","flowers.f4.desc":"Big, full, soft blooms: alone or paired with other flowers, they add volume and freshness to any arrangement.",
-    "flowers.f5.name":"Green carnation","flowers.f5.desc":"An original, surprising flower for anyone looking for something different: it adds a fresh, modern touch.",
-    "flowers.f6.name":"Gerbera","flowers.f6.desc":"Vivid colours and a graphic shape: the gerbera is the right flower to add joy and movement to any composition.",
-    "gallery.eyebrow":"OUR WORK","gallery.h2":"A taste of our arrangements",
+    "flowers.eyebrow":"ARRANGEMENTS","flowers.h2":"Our bouquets",
+    "flowers.sub":"Nine floral styles for every taste and occasion, from warm colours to classic roses.",
+    "flowers.f1.name":"Warm colours","flowers.f1.desc":"A burst of orange, yellow and coral tones: a bouquet that warms up any room and lifts the mood instantly.",
+    "flowers.f2.name":"Cool colours","flowers.f2.desc":"Blue, lilac and violet blend in a delicate harmony, perfect for elegant, relaxing arrangements.",
+    "flowers.f3.name":"White","flowers.f3.desc":"Timeless purity and elegance: an all-white bouquet, ideal for weddings, christenings and important moments.",
+    "flowers.f4.name":"Pink","flowers.f4.desc":"Delicate and romantic, the pink bouquet is a timeless classic for every gentle gesture.",
+    "flowers.f5.name":"White-green","flowers.f5.desc":"Freshness and natural beauty in a mix of white petals and green hues, for a sober, refined touch.",
+    "flowers.f6.name":"White roses","flowers.f6.desc":"White roses selected one by one: pure elegance for the most refined occasions.",
+    "flowers.f7.name":"Red","flowers.f7.desc":"Passion and intensity in vivid red tones, perfect for surprising someone you love.",
+    "flowers.f8.name":"Red roses","flowers.f8.desc":"The great classic of love: fresh red roses, chosen daily at the market for the highest quality.",
+    "flowers.f9.name":"Marco's bouquet","flowers.f9.desc":"Our florist's signature selection: the arrangement of the day, made for those who trust our eye.",
     "footer.visit":"Come visit us","footer.bookLink":"Book a service →",
     "footer.hoursTitle":"Opening hours","footer.mapTitle":"Where we are",
     "footer.copy":"© 2026 Le Luire Fiori Milano. All rights reserved.",
@@ -801,6 +783,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e){
     `Telefono: ${f.phone.value}`,
     `Email: ${f.email.value}`,
     `Data desiderata: ${f.date.value || '-'}`,
+    `Indirizzo di consegna: ${f.address.value || '-'}`,
     `Servizio: ${serviceLabel}`,
     ``,
     `Messaggio:`,
@@ -810,12 +793,13 @@ document.getElementById('bookingForm').addEventListener('submit', function(e){
     `Phone: ${f.phone.value}`,
     `Email: ${f.email.value}`,
     `Preferred date: ${f.date.value || '-'}`,
+    `Delivery address: ${f.address.value || '-'}`,
     `Service: ${serviceLabel}`,
     ``,
     `Message:`,
     f.message.value || '-'
   ];
-  const mailto = `mailto:info@leluire.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+  const mailto = `mailto:leluire@hotmail.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
   window.location.href = mailto;
   const status = document.getElementById('formStatus');
   status.textContent = lang === 'it'
