@@ -547,7 +547,7 @@
           <div class="field full">
             <button type="submit" class="btn btn-primary btn-block" data-i18n="booking.submit">Invia richiesta</button>
             <p id="formStatus"></p>
-            <p class="form-note" data-i18n="booking.note">Il modulo aprirà la vostra app di posta con la richiesta già compilata, pronta da inviare.</p>
+            <p class="form-note" data-i18n="booking.note">La vostra richiesta ci arriverà direttamente via email: vi risponderemo al più presto.</p>
           </div>
         </form>
         <div class="booking-info reveal">
@@ -643,7 +643,7 @@ const translations = {
     "booking.service":"Servizio","booking.other":"Altro",
     "booking.msg":"Messaggio","booking.msgPh":"Raccontateci qualcosa in più sulla vostra richiesta...",
     "booking.submit":"Invia richiesta",
-    "booking.note":"Il modulo aprirà la vostra app di posta con la richiesta già compilata, pronta da inviare.",
+    "booking.note":"La vostra richiesta ci arriverà direttamente via email: vi risponderemo al più presto.",
     "booking.infoTitle":"Preferite parlare con noi?",
     "booking.infoAddress":"V. Piero della Francesca, 40, 20154 Milano MI",
     "booking.infoHours":"Ven–Sab 8:30–19:30 · Lun 15:30–19:30 · Mar–Gio 8:30–19:30 · Dom chiuso",
@@ -699,7 +699,7 @@ const translations = {
     "booking.service":"Service","booking.other":"Other",
     "booking.msg":"Message","booking.msgPh":"Tell us a bit more about your request...",
     "booking.submit":"Send request",
-    "booking.note":"The form will open your email app with the request already filled in, ready to send.",
+    "booking.note":"Your request will reach us directly by email: we'll get back to you as soon as possible.",
     "booking.infoTitle":"Prefer to talk to us?",
     "booking.infoAddress":"V. Piero della Francesca, 40, 20154 Milan, Italy",
     "booking.infoHours":"Fri–Sat 8:30am–7:30pm · Mon 3:30pm–7:30pm · Tue–Thu 8:30am–7:30pm · Sun closed",
@@ -766,42 +766,47 @@ document.querySelectorAll('.book-trigger').forEach(btn=>{
   });
 });
 
-// Booking form -> mailto
+// Booking form -> Formspree
 document.getElementById('bookingForm').addEventListener('submit', function(e){
   e.preventDefault();
   const lang = document.documentElement.lang || 'it';
   const f = e.target;
-  const serviceLabel = f.service.options[f.service.selectedIndex].text;
-  const subject = lang === 'it'
-    ? `Richiesta prenotazione — ${serviceLabel}`
-    : `Booking request — ${serviceLabel}`;
-  const bodyLines = lang === 'it' ? [
-    `Nome: ${f.name.value}`,
-    `Telefono: ${f.phone.value}`,
-    `Email: ${f.email.value}`,
-    `Data desiderata: ${f.date.value || '-'}`,
-    `Indirizzo di consegna: ${f.address.value || '-'}`,
-    `Servizio: ${serviceLabel}`,
-    ``,
-    `Messaggio:`,
-    f.message.value || '-'
-  ] : [
-    `Name: ${f.name.value}`,
-    `Phone: ${f.phone.value}`,
-    `Email: ${f.email.value}`,
-    `Preferred date: ${f.date.value || '-'}`,
-    `Delivery address: ${f.address.value || '-'}`,
-    `Service: ${serviceLabel}`,
-    ``,
-    `Message:`,
-    f.message.value || '-'
-  ];
-  const mailto = `mailto:leluire@hotmail.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-  window.location.href = mailto;
   const status = document.getElementById('formStatus');
-  status.textContent = lang === 'it'
-    ? 'Apertura della tua app di posta in corso...'
-    : 'Opening your email app...';
+  const submitBtn = f.querySelector('button[type="submit"]');
+  const serviceLabel = f.service.options[f.service.selectedIndex].text;
+
+  status.textContent = lang === 'it' ? 'Invio della richiesta in corso...' : 'Sending your request...';
+  submitBtn.disabled = true;
+
+  const data = new FormData(f);
+  data.set('service', serviceLabel);
+  data.set('_replyto', f.email.value);
+  data.set('_subject', lang === 'it'
+    ? `Richiesta prenotazione — ${serviceLabel}`
+    : `Booking request — ${serviceLabel}`);
+
+  fetch('https://formspree.io/f/xkjgvaeq', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      status.textContent = lang === 'it'
+        ? 'Richiesta inviata! Vi ricontatteremo al più presto.'
+        : 'Request sent! We will contact you shortly.';
+      f.reset();
+    } else {
+      status.textContent = lang === 'it'
+        ? 'Si è verificato un errore. Riprova oppure chiamaci al 02 347010.'
+        : 'Something went wrong. Please try again or call us.';
+    }
+  }).catch(() => {
+    status.textContent = lang === 'it'
+      ? 'Si è verificato un errore. Riprova oppure chiamaci al 02 347010.'
+      : 'Something went wrong. Please try again or call us.';
+  }).finally(() => {
+    submitBtn.disabled = false;
+  });
 });
 
 // Reveal on scroll (with safety fallback so content is never stuck hidden)
