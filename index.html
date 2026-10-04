@@ -785,25 +785,50 @@ document.getElementById('bookingForm').addEventListener('submit', function(e){
     ? `Richiesta prenotazione — ${serviceLabel}`
     : `Booking request — ${serviceLabel}`);
 
+  const showError = detail => {
+    const mailBody = [
+      `${lang === 'it' ? 'Nome' : 'Name'}: ${f.name.value}`,
+      `${lang === 'it' ? 'Telefono' : 'Phone'}: ${f.phone.value}`,
+      `Email: ${f.email.value}`,
+      `${lang === 'it' ? 'Data desiderata' : 'Preferred date'}: ${f.date.value || '-'}`,
+      `${lang === 'it' ? 'Indirizzo di consegna' : 'Delivery address'}: ${f.address.value || '-'}`,
+      `${lang === 'it' ? 'Servizio' : 'Service'}: ${serviceLabel}`,
+      '',
+      `${lang === 'it' ? 'Messaggio' : 'Message'}: ${f.message.value || '-'}`
+    ].join('\n');
+    const link = document.createElement('a');
+    link.href = `mailto:leluire@hotmail.it?subject=${encodeURIComponent(data.get('_subject'))}&body=${encodeURIComponent(mailBody)}`;
+    link.textContent = lang === 'it' ? 'scriverci via email' : 'email us';
+    link.style.textDecoration = 'underline';
+    status.textContent = (lang === 'it'
+      ? 'Non siamo riusciti a inviare la richiesta' + (detail ? ` (${detail})` : '') + '. Puoi '
+      : 'We could not send your request' + (detail ? ` (${detail})` : '') + '. You can ');
+    status.appendChild(link);
+    status.appendChild(document.createTextNode(
+      lang === 'it' ? ' oppure chiamarci al 02 347010.' : ' or call us at 02 347010.'));
+  };
+
   fetch('https://formspree.io/f/xkjgvaeq', {
     method: 'POST',
     body: data,
     headers: { 'Accept': 'application/json' }
-  }).then(response => {
+  }).then(async response => {
     if(response.ok){
       status.textContent = lang === 'it'
         ? 'Richiesta inviata! Vi ricontatteremo al più presto.'
         : 'Request sent! We will contact you shortly.';
       f.reset();
     } else {
-      status.textContent = lang === 'it'
-        ? 'Si è verificato un errore. Riprova oppure chiamaci al 02 347010.'
-        : 'Something went wrong. Please try again or call us.';
+      let detail = `HTTP ${response.status}`;
+      try {
+        const body = await response.json();
+        if(body.errors && body.errors.length) detail = body.errors.map(x => x.message).join('; ');
+        else if(body.error) detail = body.error;
+      } catch(_) {}
+      showError(detail);
     }
   }).catch(() => {
-    status.textContent = lang === 'it'
-      ? 'Si è verificato un errore. Riprova oppure chiamaci al 02 347010.'
-      : 'Something went wrong. Please try again or call us.';
+    showError(lang === 'it' ? 'connessione bloccata' : 'connection blocked');
   }).finally(() => {
     submitBtn.disabled = false;
   });
