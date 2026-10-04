@@ -808,11 +808,16 @@ document.getElementById('bookingForm').addEventListener('submit', function(e){
       lang === 'it' ? ' oppure chiamarci al 02 347010.' : ' or call us at 02 347010.'));
   };
 
-  fetch('https://formspree.io/f/xkjgvaeq', {
+  const post = url => fetch(url, {
     method: 'POST',
     body: data,
     headers: { 'Accept': 'application/json' }
-  }).then(async response => {
+  });
+
+  post('/api/richiesta')
+    .then(r => (r.ok || r.status === 400 || r.status === 422) ? r : post('https://formspree.io/f/xkjgvaeq'))
+    .catch(() => post('https://formspree.io/f/xkjgvaeq'))
+    .then(async response => {
     if(response.ok){
       status.textContent = lang === 'it'
         ? 'Richiesta inviata! Vi ricontatteremo al più presto.'

@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/api/richiesta", "destination": "https://formspree.io/f/xkjgvaeq" }
+  ]
+}
